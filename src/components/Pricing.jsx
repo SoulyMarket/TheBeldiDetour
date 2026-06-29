@@ -1,7 +1,7 @@
 ﻿import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 
-const WHATSAPP = 'https://wa.me/212600000000'
+const WHATSAPP = 'https://wa.me/212771674839'
 
 const included = [
   'Round-trip transfer from Marrakech',

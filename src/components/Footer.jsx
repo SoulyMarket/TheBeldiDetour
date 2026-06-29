@@ -1,6 +1,6 @@
 ﻿import { motion } from 'framer-motion'
 
-const WHATSAPP = 'https://wa.me/212600000000'
+const WHATSAPP = 'https://wa.me/212771674839'
 
 const links = [
   { label: 'Experience', href: '#experience' },

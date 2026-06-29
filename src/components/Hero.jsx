@@ -1,7 +1,7 @@
-import { useRef } from 'react'
+﻿import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-const WHATSAPP = 'https://wa.me/212600000000'
+const WHATSAPP = 'https://wa.me/212771674839'
 
 export default function Hero() {
   const ref = useRef(null)

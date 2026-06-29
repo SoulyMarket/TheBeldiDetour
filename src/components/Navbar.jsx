@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
-const WHATSAPP = 'https://wa.me/212600000000'
+const WHATSAPP = 'https://wa.me/212771674839'
 
 const links = [
   { label: 'Experience', href: '#experience' },
