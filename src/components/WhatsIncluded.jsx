@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Coffee, Flame, Camera, Leaf, Palette } from 'lucide-react'
 
 const activities = [
@@ -42,13 +42,16 @@ const activities = [
 const containerVariants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
   },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.1, 0.25, 1] } },
+  hidden: { opacity: 0, y: 18, scale: 0.96, filter: 'blur(4px)' },
+  show: {
+    opacity: 1, y: 0, scale: 1, filter: 'blur(0px)',
+    transition: { duration: 0.425, ease: [0.25, 0.1, 0.25, 1] },
+  },
 }
 
 export default function WhatsIncluded() {
@@ -75,19 +78,19 @@ export default function WhatsIncluded() {
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 6, filter: 'blur(3px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-5"
           >
             Everything Included
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.75, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, y: 14, filter: 'blur(5px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.5, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
             className="font-serif text-warm-white text-4xl md:text-5xl lg:text-[3rem] mb-5"
           >
             Five experiences.
@@ -95,10 +98,10 @@ export default function WhatsIncluded() {
             <em className="text-gold">One afternoon.</em>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.4, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-warm-white/50 text-base md:text-lg max-w-xl mx-auto"
           >
             No hidden costs. No tourist traps. Just everything that makes the day worth talking about.
@@ -110,7 +113,7 @@ export default function WhatsIncluded() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: false, margin: '-60px' }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
         >
           {activities.map((act, i) => {

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thebeldidetour.com/sitemap.xml

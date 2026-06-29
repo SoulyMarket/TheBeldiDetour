@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 
 const fadeUp = {
-  initial: { opacity: 0, y: 32 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-80px' },
-  transition: { duration: 0.75, ease: [0.25, 0.1, 0.25, 1] },
+  initial: { opacity: 0, y: 18, filter: 'blur(4px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-80px' },
+  transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] },
 }
 
 export default function Experience() {
@@ -24,23 +24,31 @@ export default function Experience() {
           {/* Left: Image placeholder */}
           <motion.div
             {...fadeUp}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
             className="relative order-2 lg:order-1"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] grain">
-              <img
-                src="/images/clothing.png"
+              <motion.img
+                src="/images/clothing.webp"
                 alt="Tourists wearing traditional Amazigh Berber clothing in the Atlas Mountains"
                 className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width="2048"
+                height="1536"
+                initial={{ scale: 1.07 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: false, margin: '-80px' }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/30 to-transparent" />
             </div>
             {/* Floating badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 12 }}
+              initial={{ opacity: 0, scale: 0.85, y: 6 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               className="absolute -bottom-6 -right-4 md:-right-8 bg-rich-brown text-warm-white rounded-2xl px-6 py-5 shadow-2xl shadow-dark/20"
             >
               <p className="font-serif text-3xl font-semibold leading-none">90</p>
@@ -57,7 +65,7 @@ export default function Experience() {
 
             <motion.h2
               {...fadeUp}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.4, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
               className="font-serif text-dark text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.1]"
             >
               This isn't your next tour.
@@ -67,7 +75,7 @@ export default function Experience() {
 
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.35, delay: 0.1 }}
               className="space-y-5 text-dark/70 leading-relaxed text-base md:text-[1.05rem]"
             >
               <p>
@@ -87,7 +95,7 @@ export default function Experience() {
 
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.7, delay: 0.3 }}
+              transition={{ duration: 0.35, delay: 0.15 }}
               className="pt-4 grid grid-cols-2 gap-5"
             >
               {[

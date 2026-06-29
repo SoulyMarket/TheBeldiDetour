@@ -32,7 +32,7 @@ export default function Navbar() {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${navBg}`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-[68px] flex items-center justify-between">
@@ -85,7 +85,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             className="md:hidden bg-warm-white border-t border-sand/70 overflow-hidden"
           >
             <nav className="px-5 pt-4 pb-6 flex flex-col gap-1" aria-label="Mobile navigation">
@@ -96,7 +96,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.3 }}
+                  transition={{ delay: i * 0.06, duration: 0.15 }}
                   className="text-dark/70 hover:text-dark text-base font-medium py-3 border-b border-sand/40 last:border-0 transition-colors cursor-pointer"
                 >
                   {l.label}
@@ -106,9 +106,9 @@ export default function Navbar() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.28, duration: 0.3 }}
+                transition={{ delay: 0.14, duration: 0.15 }}
                 className="mt-4 bg-forest-green text-warm-white font-semibold py-3.5 rounded-full text-center text-sm hover:bg-forest-deep transition-colors cursor-pointer"
               >
                 Book Your Detour on WhatsApp

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 
 const reviews = [
@@ -42,19 +42,19 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 6, filter: 'blur(3px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-5"
           >
             From the Mountain
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, y: 14, filter: 'blur(5px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.5, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
             className="font-serif text-dark text-4xl md:text-5xl lg:text-[3rem]"
           >
             What people say
@@ -68,10 +68,10 @@ export default function Testimonials() {
           {reviews.map((r, i) => (
             <motion.div
               key={r.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
+              initial={{ opacity: 0, y: 18, scale: 0.97, filter: 'blur(4px)' }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              viewport={{ once: false, margin: '-80px' }}
+              transition={{ duration: 0.45, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-dark/[0.03] border border-dark/8 rounded-2xl p-7 flex flex-col gap-5"
             >
               {/* Stars */}
@@ -108,8 +108,8 @@ export default function Testimonials() {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.35, delay: 0.2 }}
           className="text-center text-dark/35 text-xs mt-8 italic"
         >
           Placeholder testimonials. Replace with real guest reviews once collected.

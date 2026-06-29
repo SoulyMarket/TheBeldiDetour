@@ -3,17 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Beldi Detour. A premium hidden mountain experience in the Atlas near Marrakech. Mint tea, tagine cooking, Amazigh traditions, meditation, and stone painting. 1000 MAD per person." />
-    <meta property="og:title" content="The Beldi Detour | Atlas Mountain Experience" />
-    <meta property="og:description" content="Escape the tourist trail. A half-day journey to a hidden plane in the Atlas Mountains, 90 minutes from Marrakech." />
+
+    <!-- Primary SEO -->
+    <title>The Beldi Detour | Atlas Mountain Experience near Marrakech</title>
+    <meta name="description" content="A premium half-day experience in the Atlas Mountains, 90 minutes from Marrakech. Mint tea ceremony, tagine cooking, Amazigh Berber traditions, mountain meditation and stone painting. 1000 MAD per person." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="The Beldi Detour" />
+    <link rel="canonical" href="https://thebeldidetour.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Beldi Detour" />
+    <meta property="og:url" content="https://thebeldidetour.com/" />
+    <meta property="og:title" content="The Beldi Detour | Atlas Mountain Experience near Marrakech" />
+    <meta property="og:description" content="Escape the tourist trail. A half-day journey to a hidden plane in the Atlas Mountains. Mint tea, fire-cooked tagines, Amazigh traditions and mountain meditation — 90 minutes from Marrakech." />
+    <meta property="og:image" content="https://thebeldidetour.com/images/hero.webp" />
+    <meta property="og:image:width" content="2048" />
+    <meta property="og:image:height" content="1152" />
+    <meta property="og:image:alt" content="Atlas Mountains at golden hour with mint tea picnic setup" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Beldi Detour | Atlas Mountain Experience" />
+    <meta name="twitter:description" content="Escape the tourist trail. A half-day in the Atlas Mountains — mint tea, tagine, Berber traditions and mountain silence. 90 min from Marrakech." />
+    <meta name="twitter:image" content="https://thebeldidetour.com/images/hero.webp" />
+
+    <!-- Theme -->
     <meta name="theme-color" content="#2D5016" />
+
+    <!-- Fonts: preconnect then load -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <title>The Beldi Detour | Atlas Mountain Experience</title>
+
+    <!-- Preload LCP image (hero) -->
+    <link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high" />
+
+    <!-- Structured data: TouristAttraction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "The Beldi Detour",
+      "description": "A premium half-day mountain experience in the Atlas near Marrakech. Mint tea ceremony, tagine cooking competition, traditional Amazigh clothing and professional photos, mountain meditation, and stone painting souvenir.",
+      "url": "https://thebeldidetour.com",
+      "image": "https://thebeldidetour.com/images/hero.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Setti Fatma",
+        "addressRegion": "Ourika Valley",
+        "addressCountry": "MA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "31.2269",
+        "longitude": "-7.6572"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "1000",
+        "priceCurrency": "MAD",
+        "description": "Per person, all-inclusive. Includes round-trip transfer from Marrakech.",
+        "availability": "https://schema.org/InStock"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "reservations",
+        "url": "https://wa.me/212600000000"
+      },
+      "touristType": ["Cultural", "Adventure", "Nature"]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

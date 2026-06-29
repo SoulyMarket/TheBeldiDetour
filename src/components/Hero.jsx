@@ -15,9 +15,13 @@ export default function Hero() {
       {/* Parallax background */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 scale-[1.15]">
         <img
-          src="/images/hero.png"
+          src="/images/hero.webp"
           alt="Atlas Mountains at golden hour with mint tea picnic setup"
           className="absolute inset-0 w-full h-full object-cover"
+          fetchpriority="high"
+          decoding="sync"
+          width="2048"
+          height="1152"
         />
         {/* Atmospheric overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-dark/25 via-dark/10 to-dark/65" />
@@ -37,9 +41,9 @@ export default function Hero() {
       >
         {/* Eyebrow */}
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          initial={{ opacity: 0, y: 7, filter: 'blur(3px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.45, delay: 0.125, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-7 md:mb-8"
         >
           Setti Fatma · Ourika Valley · Atlas Mountains
@@ -47,9 +51,9 @@ export default function Hero() {
 
         {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          initial={{ opacity: 0, y: 16, filter: 'blur(5px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.55, delay: 0.21, ease: [0.25, 0.1, 0.25, 1] }}
           className="font-serif text-warm-white text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.08] mb-6 md:mb-8"
         >
           Escape the Itinerary.
@@ -59,9 +63,9 @@ export default function Hero() {
 
         {/* Subheadline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.65 }}
+          initial={{ opacity: 0, y: 10, filter: 'blur(3px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.45, delay: 0.34, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-warm-white/80 text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-light"
         >
           A hidden plane in the Atlas, 90 minutes from Marrakech. Mint tea, fire-cooked tagines,
@@ -70,9 +74,9 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.85 }}
+          initial={{ opacity: 0, y: 8, filter: 'blur(2px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.4, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
@@ -96,7 +100,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 1.2 }}
+          transition={{ duration: 0.45, delay: 0.6 }}
           className="mt-12 md:mt-14 flex flex-wrap items-center justify-center gap-3 md:gap-5"
         >
           {['1000 MAD · ~90€ per person', 'Small private groups', 'Photos & video included'].map(t => (
@@ -114,12 +118,12 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, scaleY: 0 }}
         animate={{ opacity: 1, scaleY: 1 }}
-        transition={{ duration: 0.8, delay: 1.6 }}
+        transition={{ duration: 0.4, delay: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
         <motion.div
           animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
           className="w-px h-10 bg-gradient-to-b from-warm-white/0 via-warm-white/50 to-warm-white/0"
         />
       </motion.div>

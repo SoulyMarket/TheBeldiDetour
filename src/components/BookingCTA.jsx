@@ -1,14 +1,20 @@
-import { motion } from 'framer-motion'
+﻿import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const WHATSAPP = 'https://wa.me/212600000000'
 
 export default function BookingCTA() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
+
   return (
-    <section id="book" className="relative overflow-hidden">
-      {/* Background */}
-      <div
+    <section ref={ref} id="book" className="relative overflow-hidden">
+      {/* Parallax background */}
+      <motion.div
         className="absolute inset-0"
         style={{
+          y: bgY,
           background: `
             radial-gradient(ellipse 70% 80% at 50% 100%, rgba(45,80,22,0.55) 0%, transparent 65%),
             radial-gradient(ellipse 50% 40% at 80% 20%, rgba(201,168,76,0.1) 0%, transparent 55%),
@@ -33,20 +39,20 @@ export default function BookingCTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-5 md:px-8 py-24 md:py-36 text-center">
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 6, filter: 'blur(3px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: false, margin: '-80px' }}
+          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-6"
         >
           Ready When You Are
         </motion.p>
 
         <motion.h2
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: false, margin: '-80px' }}
+          transition={{ duration: 0.55, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
           className="font-serif text-warm-white text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] mb-6 leading-[1.1]"
         >
           The mountains are waiting.
@@ -55,10 +61,10 @@ export default function BookingCTA() {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: false, margin: '-80px' }}
+          transition={{ duration: 0.45, delay: 0.125, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-warm-white/55 text-base md:text-lg max-w-xl mx-auto mb-12"
         >
           Message us on WhatsApp with your group size and preferred date.
@@ -66,10 +72,10 @@ export default function BookingCTA() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          initial={{ opacity: 0, y: 10, filter: 'blur(3px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: false, margin: '-80px' }}
+          transition={{ duration: 0.4, delay: 0.19, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
@@ -86,8 +92,8 @@ export default function BookingCTA() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.4, delay: 0.25 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-warm-white/35 text-sm"
         >
           <span>1000 MAD · ~90€ per person</span>

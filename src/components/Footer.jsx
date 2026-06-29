@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 
 const WHATSAPP = 'https://wa.me/212600000000'
 
@@ -15,10 +15,10 @@ export default function Footer() {
     <footer className="bg-dark border-t border-warm-white/6">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-16">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.35 }}
           className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
         >
           {/* Brand */}

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { MessageCircle, MapPin, Mountain, Sparkles } from 'lucide-react'
 
 const steps = [
@@ -43,19 +43,19 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="max-w-2xl mb-14 md:mb-20">
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 6, filter: 'blur(3px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-5"
           >
             The Journey
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, y: 14, filter: 'blur(5px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.5, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
             className="font-serif text-dark text-4xl md:text-5xl lg:text-[3rem]"
           >
             From your hotel to the
@@ -66,8 +66,14 @@ export default function HowItWorks() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connecting line — desktop */}
-          <div className="hidden lg:block absolute top-9 left-[3.75rem] right-[3.75rem] h-px bg-sand" />
+          {/* Connecting line â€” desktop, animates in */}
+          <motion.div
+            className="hidden lg:block absolute top-9 left-[3.75rem] right-[3.75rem] h-px bg-sand origin-left"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: false, margin: '-80px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+          />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-6">
             {steps.map((step, i) => {
@@ -75,12 +81,12 @@ export default function HowItWorks() {
               return (
                 <motion.div
                   key={step.num}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
+                  initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  viewport={{ once: false, margin: '-80px' }}
                   transition={{
-                    duration: 0.7,
-                    delay: i * 0.12,
+                    duration: 0.45,
+                    delay: i * 0.15,
                     ease: [0.25, 0.1, 0.25, 1],
                   }}
                   className="relative"
@@ -111,10 +117,10 @@ export default function HowItWorks() {
 
         {/* Bottom note */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          viewport={{ once: false, margin: '-60px' }}
+          transition={{ duration: 0.35, delay: 0.15 }}
           className="mt-14 md:mt-16 p-6 md:p-8 rounded-2xl bg-forest-green/6 border border-forest-green/10"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
